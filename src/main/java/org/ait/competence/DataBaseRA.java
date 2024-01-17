@@ -1,19 +1,15 @@
 package org.ait.competence;
 
-
-import org.testng.internal.Yaml;
 import org.yaml.snakeyaml.Yaml;
-
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Map;
 
-public class DataBase {
+public class DataBaseRA {
     private static Connection connection;
 
-
     static {
-        InputStream inputStream = DataBase
+        InputStream inputStream = DataBaseRA
                 .class
                 .getClassLoader()
                 .getResourceAsStream("application.yml");

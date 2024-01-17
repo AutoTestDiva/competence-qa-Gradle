@@ -1,15 +1,16 @@
 package org.ait.competence.fwRA;
 
-import org.ait.competence.dto.NewUserDto;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
+import org.ait.competence.dto.NewUserDto;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
 
 import static io.restassured.RestAssured.given;
+
 public class UserHelperRA extends BaseHelperRA{
     public UserHelperRA() {
     }

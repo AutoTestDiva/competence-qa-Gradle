@@ -14,14 +14,14 @@ public class AuthenticationTestsRA extends TestBaseRA{
 
     @BeforeMethod
     public void precondition() throws SQLException {
-//        user.registerUser("pnata_78@ukr.net", "Pnata1978!");
-        cookie = user.getLoginCookie("pnata_78@ukr.net", "Pnata1978!");
+        user.registerUser("vasja.pupkin@competa.test", "userPass007!");
+        cookie = user.getLoginCookie("vasja.pupkin@competa.test", "userPass007!");
     }
 
 
     @Test
     public void loginAsUserPositiveTest() {
-        AuthResponseDto responseDto = user.loginUserRA("pnata_78@ukr.net", "Pnata1978!")
+        AuthResponseDto responseDto = user.loginUserRA("vasja.pupkin@competa.test", "userPass007!")
                 .then()
                 .assertThat().statusCode(200)//;
                 .extract().response().as(AuthResponseDto.class);
@@ -29,7 +29,7 @@ public class AuthenticationTestsRA extends TestBaseRA{
     }
     @Test
     public void loginAsUserWithIncorrectPasswordTest() {
-        AuthResponseDto responseDto = user.loginUserRA("pnata_78@ukr.net", "Pnata1978@")
+        AuthResponseDto responseDto = user.loginUserRA("vasja.pupkin@competa.test", "userPass007@")
                 .then()
                 .assertThat().statusCode(401)
                 .extract().response().as(AuthResponseDto.class);

@@ -1,7 +1,7 @@
 package org.ait.competence.tests.restAssuredTests;
 
 import io.restassured.RestAssured;
-import org.ait.competence.DataBase;
+import org.ait.competence.DataBaseRA;
 import org.ait.competence.fwRA.UserHelperRA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +15,9 @@ import java.util.Arrays;
 public class TestBaseRA {
 
     final static Logger logger = LoggerFactory.getLogger(TestBaseRA.class);
-    protected static DataBase db;
+    protected static DataBaseRA db;
     protected static UserHelperRA user = new UserHelperRA();
-    // protected static LessonHelperRA lesson = new LessonHelperRA();
+   // protected static LessonHelperRA lesson = new LessonHelperRA();
 
     @BeforeMethod
     public void precondition(Method method, Object[] parameters){
@@ -36,5 +36,4 @@ public class TestBaseRA {
         logger.info("Stop test");
         logger.info("==============================");
     }
-
 }

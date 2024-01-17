@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class AuthTestsRA extends TestBaseRA {
 
-    @Test()
+   @Test()
     public void registerUserPositiveTest() throws SQLException {
         user.registerUser("pnata_78@ukr.net", "Pnata1978!")
                 .then()
@@ -16,7 +16,7 @@ public class AuthTestsRA extends TestBaseRA {
 
     @Test()
     public void registerUserWithExistEmailTest() throws SQLException {
-        ExistEmailResponseDto existEmail = user.registerUser("pnata_78@ukr.net", "Pnata1978!")
+        ExistEmailResponseDto existEmail = user.registerUser("vasja.pupkin@competa.test", "userPass007!")
                 .then()
                 .assertThat().statusCode(400)
                 .extract().response().as(ExistEmailResponseDto.class);
