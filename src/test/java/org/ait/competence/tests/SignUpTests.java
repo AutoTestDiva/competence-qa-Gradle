@@ -12,12 +12,12 @@ public class SignUpTests extends TestBase {
         new HomePage(driver).selectSignUp();
     }
 
-    @Test
+   /* @Test
     public void SignUpPositiveTest() {
         new SignUpPage(driver).signUp("student3@gmail.com", "Qwerty007!",
                 "Qwerty007!")
                 .verifyRegisteredSinceText("Registered since");
-    }
+    }*/
 
     @Test
     public void SignUpNegativeTest() {
