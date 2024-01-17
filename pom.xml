@@ -16,10 +16,10 @@
 
     <dependencies>
 
-        <dependency><!--//-->
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.12.1</version> <!--у меня java 15.0.2-->
+            <version>4.12.1</version>
         <exclusions>
             <exclusion>
                 <groupId>conflicting-group</groupId>
