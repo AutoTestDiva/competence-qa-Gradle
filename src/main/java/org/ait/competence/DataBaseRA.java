@@ -41,7 +41,6 @@ public class DataBaseRA {
             return null;
         }
     }
-
     public static boolean execute(String query) {
         try {
             return connection.createStatement().execute(query);
@@ -55,7 +54,6 @@ public class DataBaseRA {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 //            preparedStatement.setInt(1, userId);
             preparedStatement.executeUpdate();
-
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

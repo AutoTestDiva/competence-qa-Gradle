@@ -20,14 +20,14 @@ public class TestBaseRA {
    // protected static LessonHelperRA lesson = new LessonHelperRA();
 
     @BeforeMethod
-    public void precondition(Method method, Object[] parameters){
+    public void preconditionRA(Method method, Object[] parameters){
         RestAssured.baseURI = "http://localhost:5173";
         // RestAssured.basePath = "api";
         logger.info("Start test " + method.getName() + " with parameters " + Arrays.asList(parameters));
     }
 
     @AfterMethod
-    public void quit(ITestResult result){
+    public void quitRA(ITestResult result){
         if(result.isSuccess()){
             logger.info("PASSED: " + result.getMethod().getMethodName());
         } else {

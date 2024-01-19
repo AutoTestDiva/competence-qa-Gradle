@@ -1,2 +1,2 @@
 INSERT INTO users (dtype, email, password)
-    VALUES ('User', 'vasja.pupkin@competa.test', 'userPass007!');
+    VALUES ('User', 'nata@gmail.com', 'Nata2024!');
