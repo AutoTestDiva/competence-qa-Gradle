@@ -35,7 +35,6 @@ public class UserHelperRA extends BaseHelperRA {
                 .when()
                 .post("/api/login");
     }
-
     public Cookie getLoginCookie(String email, String password) {
         Response response = given()
                 .contentType(ContentType.fromContentType("application/x-www-form-urlencoded"))
