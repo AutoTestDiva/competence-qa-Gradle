@@ -10,7 +10,6 @@ import static org.hamcrest.Matchers.containsString;
 
 public class AuthTestsErrorsRA extends TestBaseRA {
 
-
     @BeforeMethod
     public void preconditionRA() throws SQLException {
         user.registerUser("nata@gmail.com", "Nata2024!");

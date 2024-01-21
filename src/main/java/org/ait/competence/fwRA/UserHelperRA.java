@@ -1,9 +1,14 @@
 package org.ait.competence.fwRA;
 
+import io.opentelemetry.sdk.metrics.internal.view.AttributesProcessor;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
+import io.restassured.response.Validatable;
+import io.restassured.specification.ResponseSpecification;
+import org.ait.competence.dto.ExistEmailResponseDto;
 import org.ait.competence.dto.NewUserDto;
+import org.ait.competence.dto.PutUserProfileDto;
 import org.ait.competence.dto.ResetUserPasswordDto;
 
 import java.io.UnsupportedEncodingException;
@@ -58,7 +63,7 @@ public class UserHelperRA extends BaseHelperRA {
                 .post("/api/auth/register");
     }
 
-    public String getUserIdByEmail(String email) throws SQLException {
+    public  String getUserIdByEmail(String email) throws SQLException {
         String userId;
         try {
           userId = db.requestSelect("SELECT id FROM users WHERE email = '" + email + "';")
@@ -69,6 +74,20 @@ public class UserHelperRA extends BaseHelperRA {
             System.out.println("The user is not found" + e);
         }
         return userId;
+    }
+
+
+    public String getUserUuidByEmail(String email) {
+        String userUuid;
+        try{
+            String userId = getUserIdByEmail(email);
+            userUuid = db.requestSelect("SELECT id FROM users WHERE id = " + userId + ";")
+                    .getString(1);
+        }catch (SQLException e){
+            userUuid = null;
+            System.out.println("User is not found.  " + e);
+        }
+        return userUuid; // TODO change getUserUuidByEmail
     }
 
     private void deleteUserById(String userId) throws SQLException {
@@ -96,4 +115,6 @@ public class UserHelperRA extends BaseHelperRA {
                 .when()
                 .put("/api/user/password-reset");
     }
+
+
 }

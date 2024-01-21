@@ -2,7 +2,6 @@ package org.ait.competence.tests.restAssuredTests;
 
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
-import org.ait.competence.dto.GettingProfileDto;
 import org.ait.competence.dto.NewPasswordEqualsOldDto;
 import org.ait.competence.dto.UserNotAuthenticatedDto;
 import org.ait.competence.dto.UserResponseDto;

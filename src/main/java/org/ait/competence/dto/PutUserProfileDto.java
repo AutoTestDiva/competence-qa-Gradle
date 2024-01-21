@@ -5,10 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
 @Builder
-public class GettingProfileDto {
-    private String message;
-}
+public class PutUserProfileDto {
+    private String lastName;
+  }

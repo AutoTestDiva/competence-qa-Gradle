@@ -15,7 +15,6 @@ public class AuthTestsPositiveRegistrationRA extends TestBaseRA{
                 .assertThat().statusCode(200);
     }
 
-
 //    @Test()            //тоже рабочий тест, но взаимоисключающий с TestRA1 !!!
 //    public void a_registerUserPositiveTestRA2() throws SQLException {
 //        user.registerUser("nata@gmail.com", "Nata2024!")
