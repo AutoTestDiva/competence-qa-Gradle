@@ -1,16 +1,11 @@
 package org.ait.competence.fwRA;
 
-import io.opentelemetry.sdk.metrics.internal.view.AttributesProcessor;
+
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
-import io.restassured.response.Validatable;
-import io.restassured.specification.ResponseSpecification;
-import org.ait.competence.dto.ExistEmailResponseDto;
 import org.ait.competence.dto.NewUserDto;
-import org.ait.competence.dto.PutUserProfileDto;
 import org.ait.competence.dto.ResetUserPasswordDto;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
